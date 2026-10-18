@@ -19,16 +19,12 @@
   </header>
 
   <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-10">
-    <!-- Contenido temporal: lo borraremos cuando tengamos las vistas -->
-    <div class="rounded-2xl border border-white/10 bg-white/5 p-8 text-center shadow-xl">
-      <p class="text-lg text-slate-300">Aquí aparecerán tus excusas</p>
-    </div>
-
+        <app-category-selector [activa]="categoria()" (elegida)="elegir($event)" />
     <router-outlet />
   </main>
 
   <footer class="border-t border-white/10 px-4 py-4 text-center text-sm text-slate-400">
-    Hecho con Angular y Tailwind · Excusas de Excuser · GIFs de GIPHY
+    Hecho con Angular y Tailwind · Excusas de Excusas · GIFs de GIPHY
   </footer>
 
 </div>
