@@ -23,10 +23,10 @@ export class Home {
 
   // Qué texto buscamos en GIPHY según la categoría
   private searches: Record<string, string> = {
-    college: 'tired student',
-    office: 'tired at work',
-    party: 'party excuse',
-    family: 'family dinner',
+    college: 'triste',
+    office: 'cansado en el trabajo',
+    party: 'lo siento',
+    family: 'calla',
   };
 
   choose(value: string) {
