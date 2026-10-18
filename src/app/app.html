@@ -18,8 +18,16 @@
     </div>
   </header>
 
-  <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-10">
-         <app-category-selector [active]="category()" (chosen)="choose($event)" />
+    <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-10">
+    <app-category-selector [active]="category()" (chosen)="choose($event)" />
+
+    <app-excuse-card
+      class="mt-8 block"
+      [excuse]="excuse()"
+      [gif]="gif()"
+      [loading]="loading()"
+    />
+
     <router-outlet />
   </main>
 
