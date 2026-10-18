@@ -3,10 +3,12 @@ import { CategorySelector } from '../../components/category-selector/category-se
 import { ExcuseCard } from '../../components/excuse-card/excuse-card';
 import { ExcuseService } from '../../services/excuse';
 import { GifService } from '../../services/gif';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
-  imports: [CategorySelector, ExcuseCard],
+  imports: [CategorySelector, ExcuseCard, RouterLink],
   templateUrl: './home.html',
 })
 export class Home {
@@ -15,6 +17,7 @@ export class Home {
 
   category = signal('');
   excuse = signal('');
+  excuseId = signal<number | null>(null);
   gif = signal('');
   loading = signal(false);
 
@@ -30,10 +33,12 @@ export class Home {
     this.category.set(value);
     this.loading.set(true);
     this.gif.set('');
+    this.excuseId.set(null);
 
     this.excuseService.getExcuse(value).subscribe({
       next: data => {
         this.excuse.set(data[0].excuse);
+        this.excuseId.set(data[0].id);
         this.loading.set(false);
       },
       error: () => {

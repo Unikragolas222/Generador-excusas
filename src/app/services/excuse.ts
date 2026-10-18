@@ -18,4 +18,8 @@ export class ExcuseService {
   getExcuse(category: string): Observable<Excuse[]> {
     return this.http.get<Excuse[]>(`${this.url}/${category}/`);
   }
+    // Pide una excusa concreta por su id
+  getExcuseById(id: string): Observable<Excuse | Excuse[]> {
+    return this.http.get<Excuse | Excuse[]>(`${this.url}/id/${id}/`);
+  }
 }

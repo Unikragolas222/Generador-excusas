@@ -1,0 +1,10 @@
+<a
+  routerLink="/"
+  class="inline-block rounded-full px-4 py-2 text-slate-200 transition hover:bg-white/10 hover:text-amber-400"
+>
+  ← Volver al inicio
+</a>
+
+<app-excuse-card class="mt-6 block" [excuse]="excuse()" [loading]="loading()" />
+
+<p class="mt-4 text-center text-sm text-slate-400">Excusa nº {{ id() }}</p>

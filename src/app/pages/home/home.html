@@ -6,3 +6,14 @@
   [gif]="gif()"
   [loading]="loading()"
 />
+
+@if (excuseId()) {
+  <div class="mt-6 text-center">
+    <a
+      [routerLink]="['/excuse', excuseId()]"
+      class="inline-block rounded-full bg-amber-400 px-6 py-3 font-semibold text-slate-900 shadow-lg transition hover:bg-amber-300"
+    >
+      Ver detalle →
+    </a>
+  </div>
+}
