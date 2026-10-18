@@ -10,12 +10,12 @@ export interface Excuse {
 }
 
 @Injectable({ providedIn: 'root' })
-export class ExcusaService {
+export class ExcuseService {
   private http = inject(HttpClient);
   private url = 'https://excuser-three.vercel.app/v1/excuse';
 
   // Pide una excusa de la categoría indicada (college, office, party, family)
-  getExcusa(categoria: string): Observable<Excuse[]> {
-    return this.http.get<Excuse[]>(`${this.url}/${categoria}/`);
+  getExcuse(category: string): Observable<Excuse[]> {
+    return this.http.get<Excuse[]>(`${this.url}/${category}/`);
   }
 }

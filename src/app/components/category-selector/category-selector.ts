@@ -1,8 +1,8 @@
 import { Component, input, output } from '@angular/core';
 
-interface Categoria {
-  valor: string;
-  name: string;
+interface Category {
+  value: string; // lo que espera la API
+  name: string;  // lo que ve el usuario
   icon: string;
 }
 
@@ -11,16 +11,16 @@ interface Categoria {
   templateUrl: './category-selector.html',
 })
 export class CategorySelector {
-  categorias: Categoria[] = [
-    { valor: 'college', name: 'Universidad', icon: '🎓' },
-    { valor: 'office', name: 'Trabajo', icon: '💼' },
-    { valor: 'party', name: 'Social', icon: '🎉' },
-    { valor: 'family', name: 'Familia', icon: '🏠' },
+  categories: Category[] = [
+    { value: 'college', name: 'Universidad', icon: '🎓' },
+    { value: 'office', name: 'Trabajo', icon: '💼' },
+    { value: 'party', name: 'Social', icon: '🎉' },
+    { value: 'family', name: 'Familia', icon: '🏠' },
   ];
 
   // Entra desde fuera: la categoría que está seleccionada ahora
-  activa = input<string>('');
+  active = input<string>('');
 
   // Sale hacia fuera: avisa de la categoría pulsada
-  elegida = output<string>();
+  chosen = output<string>();
 }

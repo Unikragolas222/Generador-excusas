@@ -11,9 +11,9 @@ import { CategorySelector } from './components/category-selector/category-select
 export class App {
   protected readonly title = signal('Generador-excusas');
 
-  categoria = signal('');
+  category = signal('');
 
-  elegir(valor: string) {
-    this.categoria.set(valor);
+  choose(value: string) {
+    this.category.set(value);
   }
 }

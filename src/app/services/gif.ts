@@ -4,7 +4,7 @@ import { Observable, map } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 // Solo describimos la parte del JSON de GIPHY que nos interesa
-interface GiphyRespuesta {
+interface GiphyResponse {
   data: { images: { original: { url: string } } }[];
 }
 
@@ -14,16 +14,16 @@ export class GifService {
   private url = 'https://api.giphy.com/v1/gifs/search';
 
   // Busca un GIF a partir de un texto y devuelve directamente su URL
-  getGif(busqueda: string): Observable<string> {
+  getGif(query: string): Observable<string> {
     // Un punto de partida al azar para que no salga siempre el mismo GIF
     const offset = Math.floor(Math.random() * 20);
 
-    const peticion =
+    const request =
       `${this.url}?api_key=${environment.giphyApiKey}` +
-      `&q=${encodeURIComponent(busqueda)}&limit=1&offset=${offset}&rating=g`;
+      `&q=${encodeURIComponent(query)}&limit=1&offset=${offset}&rating=g`;
 
-    return this.http.get<GiphyRespuesta>(peticion).pipe(
-      map(respuesta => respuesta.data[0]?.images.original.url ?? '')
+    return this.http.get<GiphyResponse>(request).pipe(
+      map(response => response.data[0]?.images.original.url ?? '')
     );
   }
 }
