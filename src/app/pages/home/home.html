@@ -1,0 +1,8 @@
+<app-category-selector [active]="category()" (chosen)="choose($event)" />
+
+<app-excuse-card
+  class="mt-8 block"
+  [excuse]="excuse()"
+  [gif]="gif()"
+  [loading]="loading()"
+/>

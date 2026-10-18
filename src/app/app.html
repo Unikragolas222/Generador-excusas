@@ -9,7 +9,7 @@
       <nav aria-label="Navegación principal">
         <ul class="flex gap-2 text-sm font-medium sm:text-base">
           <li>
-            <a href="/" class="rounded-full px-4 py-2 text-slate-200 transition hover:bg-white/10 hover:text-amber-400">
+            <a routerLink="/" class="rounded-full px-4 py-2 text-slate-200 transition hover:bg-white/10 hover:text-amber-400">
               Inicio
             </a>
           </li>
@@ -18,21 +18,12 @@
     </div>
   </header>
 
-    <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-10">
-    <app-category-selector [active]="category()" (chosen)="choose($event)" />
-
-    <app-excuse-card
-      class="mt-8 block"
-      [excuse]="excuse()"
-      [gif]="gif()"
-      [loading]="loading()"
-    />
-
+  <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-10">
     <router-outlet />
   </main>
 
   <footer class="border-t border-white/10 px-4 py-4 text-center text-sm text-slate-400">
-    Hecho con Angular y Tailwind · Excusas de Excusas · GIFs de GIPHY
+    Hecho con Angular y Tailwind · Excusas de Excuser · GIFs de GIPHY
   </footer>
 
 </div>
